@@ -1,0 +1,19 @@
+{
+  "name": "projet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AngelPASTORROJAS/projet.git"
+  },
+  "author": "Angel Daniel PASTOR ROJAS",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AngelPASTORROJAS/projet/issues"
+  },
+  "homepage": "https://github.com/AngelPASTORROJAS/projet#readme"
+}
