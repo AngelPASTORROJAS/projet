@@ -9,7 +9,8 @@ const connection = mysql2.createConnection({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
-  multipleStatements: true,
+  database: process.env.DB_NAME,
+  multipleStatements: true
 });
 
 connection.connect(function (err) {
@@ -28,6 +29,24 @@ connection.connect(function (err) {
       console.log("Database created!");
     }
   );
+  connection.query(
+    `CREATE TABLE IF NOT EXISTS ${process.env.DB_NAME}.utilisateur (
+        id INT NOT NULL AUTO_INCREMENT,
+        nom VARCHAR(50),
+        prenom VARCHAR(50),
+        mail VARCHAR(100),
+        motdepasse VARCHAR(255),
+        role VARCHAR(20),
+        PRIMARY KEY (id)
+      );`,
+    function (error, results, fields) {
+      if (error) {
+        console.error("Error creating table:", error);
+      }
+      console.log("Table created successfully");
+    }
+  );
 });
+
 
 module.exports = { connection, APP };
